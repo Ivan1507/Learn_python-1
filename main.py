@@ -10,7 +10,7 @@ def permuts(N:int,M:int=-1, prefix=None):
     M = N if M == -1 else M
     prefix = prefix or []
     if M == 0:
-        print(prefix)
+        print(*prefix, sep="")
         return
     for x in range(1,N+1):
         if search(x,prefix):
@@ -18,4 +18,5 @@ def permuts(N:int,M:int=-1, prefix=None):
         prefix.append(x)
         permuts(N,M-1,prefix)
         prefix.pop()
-permuts(3)
+permuts(4)
+n = int(input())
